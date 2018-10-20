@@ -52,12 +52,20 @@ foreach($twowords_array_final as $value) {
 shuffle($firstpart);
 shuffle($secondpart);
 
-$fantasy_animals = array();
+foreach($firstpart as $value){
+  $valueone = $value;
+}
 
-$fantasy_animals = array_merge($firstpart, $secondpart);
+foreach($secondpart as $value){
+	$valuetwo = $value;
+}
+
+$fantasy_animals = [$valueone . $valuetwo];
+
+/*Название меняется при обновлении страницы*/
 
 foreach($fantasy_animals as $value){
-	echo $value . '; ';
+	echo $value;
 }
 
 ?>
