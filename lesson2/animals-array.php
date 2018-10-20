@@ -27,9 +27,37 @@ $animals = array(
 	$firstword = strstr($animaltype, ' ', true);
 	$secondword = strstr($animaltype, ' ');
 
-	echo $twowords = $firstword . $secondword;
-	echo PHP_EOL;
+	$twowords = $firstword . $secondword;
+	$twowords_array[] = $twowords;
+	$twowords_array_filtred = array_filter($twowords_array);
+	$twowords_array_final = array_values($twowords_array_filtred);
 	}
+}
+
+foreach($twowords_array_final as $value){
+	echo $value . '; ';
+}
+
+?>
+
+<h2>Фантазийные названия</h2>
+
+<?php
+
+foreach($twowords_array_final as $value) {
+	$firstpart[] = strstr($value, ' ', true);
+	$secondpart[] = strstr($value, ' ');
+}
+
+shuffle($firstpart);
+shuffle($secondpart);
+
+$fantasy_animals = array();
+
+$fantasy_animals = array_merge($firstpart, $secondpart);
+
+foreach($fantasy_animals as $value){
+	echo $value . '; ';
 }
 
 ?>
